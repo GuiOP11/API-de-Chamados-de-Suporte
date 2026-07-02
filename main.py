@@ -23,9 +23,9 @@ def listar_chamados():
 
 @app.post("/chamados")
 def criar_chamado(chamado: Chamado):
-    novo_chamado = chamado.model_dump()
+    novo_chamado = chamado.dict()
     novo_chamado["id"] = len(chamados) + 1
 
     chamados.append(novo_chamado)
 
-    return novo_chamado
+    return novo_chamado 
